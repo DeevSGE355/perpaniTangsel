@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="AdminDashboard.css"> <!-- Link to your CSS file -->
+</head><link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet"> <!-- Quill CSS -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> <!-- Quill JS -->
+<body>
+    <div class="dashboard">
+        <header>
+            <h1>Admin Dashboard</h1>
+            <nav>
+                    <a href="#news-cms">News Editor</a>
+                    <a href="#event-cms">Event Editor</a>
+                    <a href="#social-media">Social Media</a>
+                    <a href="#media-storage">Gallery Management</a>
+                    <a href="#org-structure">Organization Structure</a>
+            </nav>
+        </header>
+        <main>
+            <section id="news-cms">
+                <h2>News Management</h2>
+                <Table>
+                    <tr>
+                        <td>Title</td>
+                        <td>Date</td>
+                        <td>Option</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><button>Edit</button><button>Delete</button></td>
+                    </tr>
+                </Table>
+                <form>
+                    <h2>Buat Berita Baru</h2>
+
+                    <label for="news-title">Judul:</label>
+                    <input type="text" id="news-title" name="news-title" required>
+                    
+                    <label for="news-image">Gambar:</label>
+                    <input type="image" id="news-image" name="news-image">
+
+                    <label for="news-content">Isi:</label>
+                    <textarea id="news-content" name="news-content" required></textarea>
+                    
+                    <button type="submit">Add News</button>
+                </form>
+            </section>
+
+            <!-- Event CMS Section -->
+            <section id="event-cms">
+                <h2>Event CMS</h2>
+                <form>
+                    <label for="event-title">Event Title:</label>
+                    <input type="text" id="event-title" name="event-title" required>
+
+                    <label for="event-image">Gambar:</label>
+                    <input type="image" id="event-image" name="event-image">
+                    
+                    <label for="event-date">Date:</label>
+                    <input type="date" id="event-date" name="event-date" required>
+                    
+                    <label for="event-description">Description:</label>
+                    <textarea id="event-description" name="event-description" required></textarea>
+                    
+                    <button type="submit">Add Event</button>
+                </form>
+            </section>
+
+            <!-- Social Media Links Section -->
+            <section id="social-media">
+                <h2>Social Media Links</h2>
+                <form>
+                    <label for="facebook-link">Facebook:</label>
+                    <input type="url" id="facebook-link" name="facebook-link">
+                    
+                    <label for="twitter-link">Twitter:</label>
+                    <input type="url" id="twitter-link" name="twitter-link">
+                    
+                    <label for="instagram-link">Instagram:</label>
+                    <input type="url" id="instagram-link" name="instagram-link">
+                    
+                    <button type="submit">Update Links</button>
+                </form>
+            </section>
+
+            <!-- Media Storage Section -->
+            <section id="media-storage">
+                <h2>Media Storage</h2>
+                <form>
+                    <label for="media-upload">Upload Image/Video:</label>
+                    <input type="file" id="media-upload" name="media-upload" accept="image/*,video/*" required>
+                    
+                    <label for="media-title">File Name:</label>
+                    <input type="text" id="media-title" name="media-title" required>
+
+                    <button type="submit">Upload</button>
+                </form>
+            </section>
+
+            <!-- Organization Structure Section -->
+            <section id="org-structure">
+                <h2>Organization Structure</h2>
+                <form>
+                    <label for="edit-structure">Editable Organization Structure:</label>
+                    <div id="editor"></div>
+                    
+                    <button type="submit">Update Structure</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 PERPANI Tangerang Selatan. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+        // Initialize Quill editor
+        var quill = new Quill('#editor', {
+            theme: 'snow', // Specify theme in options
+            modules: {
+                toolbar: [
+                [{ 'size': ['8', '10', '12', '14', '16', '18', '24', '36', false] }], // Numeric size dropdown
+                    ['bold', 'italic', 'underline', 'strike'], // toggled buttons
+                    ['link', 'image'], // link and image
+                    [{ 'list': 'ordered' }, { 'list': 'bullet' }], // Lists
+                    [{ 'align': [] }], // Text alignment
+                    [{ 'header': [1, 2, 3, 4, 5, 6, false] }], // Header dropdown
+                    [{ 'color': ['#0F4036', '#00796B',  '#2d6a4f', '#afd9ac', '#9EC3BC', '#ffffff', 'inherit'] }],
+                    ['clean'] // remove formatting button
+                ]
+            }
+        });
+    </script>
+</body>
+</html>
