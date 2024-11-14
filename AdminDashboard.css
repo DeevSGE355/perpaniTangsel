@@ -182,7 +182,7 @@ th, td {
     margin: 20px 0px;
 }
 
-#edit-structure, #news-content {
+#edit-structure, #news-content, #event-desc {
     background-color: #ffffff;
     width: 98%;
     border: solid #00796B;
